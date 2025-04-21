@@ -10,7 +10,6 @@ import {
   FiSettings,
   FiUploadCloud,
   FiAlertCircle,
-  FiTrash2,
 } from "react-icons/fi";
 
 export default function DashboardPage() {

@@ -1,6 +1,6 @@
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { FiTerminal, FiCode, FiServer, FiAlertTriangle, FiMessageSquare, FiSettings } from "react-icons/fi";
+import { FiTerminal, FiCode, FiAlertTriangle, FiMessageSquare, FiSettings } from "react-icons/fi";    
 
 export default function DocsPage() {
     return (
@@ -40,13 +40,13 @@ export default function DocsPage() {
                                 <div className="border-l-4 border-blue-100 pl-6">
                                     <h3 className="text-lg font-semibold text-gray-900 mb-2">1. Create Your Bot</h3>
                                     <p className="text-gray-600 mb-4">
-                                        Start by creating a new bot with Telegram's BotFather:
+                                        Start by creating a new bot with Telegram&apos;s BotFather:
                                     </p>
                                     <div className="bg-gray-800 p-4 rounded-lg font-mono text-sm text-gray-100">
                                         <span className="text-green-400">/newbot</span><br />
                                         → Choose a name for your bot<br />
-                                        → Choose a username (must end with 'bot')<br />
-                                        → You'll receive your API token
+                                        → Choose a username (must end with &apos;bot&apos;)<br />
+                                        → You&apos;ll receive your API token
                                     </div>
                                 </div>
 
@@ -56,7 +56,7 @@ export default function DocsPage() {
                                         Set up your webhook to receive updates:
                                     </p>
                                     <div className="bg-gray-800 p-4 rounded-lg font-mono text-sm text-gray-100">
-                                        curl -F "url=https://yourdomain.com/webhook" \<br />
+                                        curl -F &quot;url=https://yourdomain.com/webhook&quot; \<br />
                                         https://api.telegram.org/bot<span className="text-yellow-400">{'<YOUR_TOKEN>'}</span>/setWebhook
                                     </div>
                                 </div>

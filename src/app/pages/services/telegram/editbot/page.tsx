@@ -10,6 +10,7 @@ import {
   DragOverlay,
   useDroppable,
   useDraggable,
+  DragEndEvent,
 } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -120,7 +121,7 @@ function SortableItem({ id, element, onChange, onDelete }: SortableItemProps) {
 function DraggablePaletteItem({
   element,
 }: {
-  element: { id: string; name: string; icon: JSX.Element };
+  element: { id: string; name: string; icon: React.ReactNode };
 }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: element.id,
@@ -172,15 +173,15 @@ export default function EditBot() {
     }
   }, [elements]);
 
-  const handleDragEnd = (event: any) => {   
+  const handleDragEnd = (event: DragEndEvent) => {   
     const { active, over } = event;
     const isPaletteItem = active.data.current?.isPaletteItem;
 
     if (isPaletteItem) {
       const newElement: ElementItem = {
         id: `elem-${Date.now()}`,
-        type: active.data.current.type as ElementType,
-        content: active.data.current.type === "button" ? "Click Me" : "",
+        type: active.data.current?.type as ElementType,
+        content: active.data.current?.type === "button" ? "Click Me" : "",
         sender: "bot",
       };
 
@@ -221,7 +222,7 @@ export default function EditBot() {
         content: chatInput,
         sender: "user",
       };
-      setElements((prev) => [...prev, userMessage]);
+      setElements((prev) => [...prev, userMessage as ElementItem]);
 
       if (chatInput.trim().toLowerCase() === "hi") {
         setIsTyping(true);
@@ -232,7 +233,7 @@ export default function EditBot() {
             content: "Hello! How can I help you today?",
             sender: "bot",
           };
-          setElements((prev) => [...prev, botResponse]);
+          setElements((prev) => [...prev, botResponse as ElementItem]);
           setIsTyping(false);
         }, 1000);
       }
