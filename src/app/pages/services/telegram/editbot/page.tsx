@@ -29,7 +29,7 @@ import {
   FiPaperclip,
 } from "react-icons/fi";
 import Navbar from "@/app/components/Navbar";
-
+import Image from "next/image";
 type ElementType = "text" | "button" | "image" | "input" | "user";
 
 interface ElementItem {
@@ -296,7 +296,7 @@ export default function EditBot() {
             className={`p-2 rounded-lg max-w-[80%] ${bubbleClass} relative group`}
           >
             {element.content ? (
-              <img
+              <Image
                 src={element.content}
                 alt="Uploaded"
                 className="rounded-lg max-w-full h-auto"
