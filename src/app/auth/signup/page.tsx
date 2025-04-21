@@ -22,7 +22,7 @@ export default function SignupForm() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       // Handle successful signup
     } catch (err) {
-      setError('Signup failed. Please try again.');
+      setError(err instanceof Error ? err.message : 'Signup failed. Please try again.');
     } finally {
       setIsLoading(false);
     }

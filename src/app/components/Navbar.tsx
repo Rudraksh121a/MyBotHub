@@ -10,8 +10,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with actual authentication logic
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+   // Replace with actual authentication logic
+  if (localStorage.getItem('access')) {
+    setIsLoggedIn(true);
+  }
   const services = [
     { name: 'Telegram Bots', href: '/pages/services/telegram' },
     { name: 'WhatsApp Automation', href: '/pages/services/whatsapp' },

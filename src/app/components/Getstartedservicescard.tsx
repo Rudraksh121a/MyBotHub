@@ -2,8 +2,7 @@ import {
   RocketLaunchIcon,
   CommandLineIcon,
   ChatBubbleLeftRightIcon,
-  ShieldCheckIcon,
-  ArrowsPointingOutIcon,
+        
 } from "@heroicons/react/24/outline";
 
 const services = [
